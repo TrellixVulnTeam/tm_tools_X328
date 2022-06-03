@@ -17,78 +17,37 @@ oclif example Hello World CLI
 <!-- usage -->
 ```sh-session
 $ npm install -g @londelo/tm_tools
-$ tools COMMAND
+$ tmt COMMAND
 running command...
-$ tools (--version)
+$ tmt (--version)
 @londelo/tm_tools/0.0.0 darwin-arm64 node-v18.0.0
-$ tools --help [COMMAND]
+$ tmt --help [COMMAND]
 USAGE
-  $ tools COMMAND
+  $ tmt COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`tools hello PERSON`](#tools-hello-person)
-* [`tools hello world`](#tools-hello-world)
-* [`tools help [COMMAND]`](#tools-help-command)
-* [`tools plugins`](#tools-plugins)
-* [`tools plugins:install PLUGIN...`](#tools-pluginsinstall-plugin)
-* [`tools plugins:inspect PLUGIN...`](#tools-pluginsinspect-plugin)
-* [`tools plugins:install PLUGIN...`](#tools-pluginsinstall-plugin-1)
-* [`tools plugins:link PLUGIN`](#tools-pluginslink-plugin)
-* [`tools plugins:uninstall PLUGIN...`](#tools-pluginsuninstall-plugin)
-* [`tools plugins:uninstall PLUGIN...`](#tools-pluginsuninstall-plugin-1)
-* [`tools plugins:uninstall PLUGIN...`](#tools-pluginsuninstall-plugin-2)
-* [`tools plugins update`](#tools-plugins-update)
+* [`tmt help [COMMAND]`](#tmt-help-command)
+* [`tmt plugins`](#tmt-plugins)
+* [`tmt plugins:install PLUGIN...`](#tmt-pluginsinstall-plugin)
+* [`tmt plugins:inspect PLUGIN...`](#tmt-pluginsinspect-plugin)
+* [`tmt plugins:install PLUGIN...`](#tmt-pluginsinstall-plugin-1)
+* [`tmt plugins:link PLUGIN`](#tmt-pluginslink-plugin)
+* [`tmt plugins:uninstall PLUGIN...`](#tmt-pluginsuninstall-plugin)
+* [`tmt plugins:uninstall PLUGIN...`](#tmt-pluginsuninstall-plugin-1)
+* [`tmt plugins:uninstall PLUGIN...`](#tmt-pluginsuninstall-plugin-2)
+* [`tmt plugins update`](#tmt-plugins-update)
+* [`tmt test [FILE]`](#tmt-test-file)
 
-## `tools hello PERSON`
+## `tmt help [COMMAND]`
 
-Say hello
-
-```
-USAGE
-  $ tools hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Whom is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/uumoss-bb/tm_tools/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `tools hello world`
-
-Say hello world
+Display help for tmt.
 
 ```
 USAGE
-  $ tools hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ oex hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-## `tools help [COMMAND]`
-
-Display help for tools.
-
-```
-USAGE
-  $ tools help [COMMAND] [-n]
+  $ tmt help [COMMAND] [-n]
 
 ARGUMENTS
   COMMAND  Command to show help for.
@@ -97,18 +56,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for tools.
+  Display help for tmt.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
 
-## `tools plugins`
+## `tmt plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ tools plugins [--core]
+  $ tmt plugins [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -117,18 +76,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ tools plugins
+  $ tmt plugins
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
 
-## `tools plugins:install PLUGIN...`
+## `tmt plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ tools plugins:install PLUGIN...
+  $ tmt plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -150,23 +109,23 @@ DESCRIPTION
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
-  $ tools plugins add
+  $ tmt plugins add
 
 EXAMPLES
-  $ tools plugins:install myplugin 
+  $ tmt plugins:install myplugin 
 
-  $ tools plugins:install https://github.com/someuser/someplugin
+  $ tmt plugins:install https://github.com/someuser/someplugin
 
-  $ tools plugins:install someuser/someplugin
+  $ tmt plugins:install someuser/someplugin
 ```
 
-## `tools plugins:inspect PLUGIN...`
+## `tmt plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ tools plugins:inspect PLUGIN...
+  $ tmt plugins:inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN  [default: .] Plugin to inspect.
@@ -179,16 +138,16 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ tools plugins:inspect myplugin
+  $ tmt plugins:inspect myplugin
 ```
 
-## `tools plugins:install PLUGIN...`
+## `tmt plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ tools plugins:install PLUGIN...
+  $ tmt plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -210,23 +169,23 @@ DESCRIPTION
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
-  $ tools plugins add
+  $ tmt plugins add
 
 EXAMPLES
-  $ tools plugins:install myplugin 
+  $ tmt plugins:install myplugin 
 
-  $ tools plugins:install https://github.com/someuser/someplugin
+  $ tmt plugins:install https://github.com/someuser/someplugin
 
-  $ tools plugins:install someuser/someplugin
+  $ tmt plugins:install someuser/someplugin
 ```
 
-## `tools plugins:link PLUGIN`
+## `tmt plugins:link PLUGIN`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ tools plugins:link PLUGIN
+  $ tmt plugins:link PLUGIN
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -244,16 +203,16 @@ DESCRIPTION
   command will override the user-installed or core plugin implementation. This is useful for development work.
 
 EXAMPLES
-  $ tools plugins:link myplugin
+  $ tmt plugins:link myplugin
 ```
 
-## `tools plugins:uninstall PLUGIN...`
+## `tmt plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ tools plugins:uninstall PLUGIN...
+  $ tmt plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -266,17 +225,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ tools plugins unlink
-  $ tools plugins remove
+  $ tmt plugins unlink
+  $ tmt plugins remove
 ```
 
-## `tools plugins:uninstall PLUGIN...`
+## `tmt plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ tools plugins:uninstall PLUGIN...
+  $ tmt plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -289,17 +248,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ tools plugins unlink
-  $ tools plugins remove
+  $ tmt plugins unlink
+  $ tmt plugins remove
 ```
 
-## `tools plugins:uninstall PLUGIN...`
+## `tmt plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ tools plugins:uninstall PLUGIN...
+  $ tmt plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -312,17 +271,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ tools plugins unlink
-  $ tools plugins remove
+  $ tmt plugins unlink
+  $ tmt plugins remove
 ```
 
-## `tools plugins update`
+## `tmt plugins update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ tools plugins update [-h] [-v]
+  $ tmt plugins update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -331,4 +290,25 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+## `tmt test [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ tmt test [FILE] [-n <value>] [-f]
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ tmt test
+```
+
+_See code: [dist/commands/test.ts](https://github.com/tm_tools/hello-world/blob/v0.0.0/dist/commands/test.ts)_
 <!-- commandsstop -->
